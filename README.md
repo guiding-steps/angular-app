@@ -1,59 +1,62 @@
-# AngularMaterialApp
+# Prerequisites:
+- Node.js (v18+ recommended)
+- npm (comes with Node.js)
+- Angular CLI (v19+)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.8.
-
-## Development server
-
-To start a local development server, run:
-
+# Step by Step Implementation:
+## Step 1: Create a new angular application
 ```bash
-ng serve
+ng new angular-material-app --standalone --style=css --routing=false
+cd angular-material-app
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+## Step 2: Add Angular Material
 ```bash
-ng generate component component-name
+ng add @angular/material
+```
+During installation, choose a theme (e.g., "Azure/Blue").
+
+## Step 3: Create the components
+```bash
+ng generate component components/header --standalone --inline-style --skip-tests
+ng generate component components/body --standalone --inline-style --skip-tests
+ng generate component components/footer --standalone --inline-style --skip-tests
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Step 4: Reproduce the following files
+- src/main.ts
+- src/app/app.config.ts
+- src/app/components/header/header.component.ts
+- src/app/components/header/header.component.html
+- src/app/components/body/body.component.ts
+- src/app/components/body/body.component.html
+- src/app/components/footer/footer.component.ts
+- src/app/components/footer/footer.component.html
+- src/app/app.component.ts
+- src/styles.css
 
+## Step 5: Run the application
 ```bash
-ng generate --help
+ng serve -o
 ```
+Now open your browser to http://localhost:4200 and you should see:
 
-## Building
+- A Material-themed header at the top
 
-To build the project run:
+- A body with 3 Material cards (some with images)
 
-```bash
-ng build
-```
+- A fixed footer at the bottom
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-## Running unit tests
+## Key Features of This Implementation:
+- Standalone Components: All components are standalone as recommended for Angular 19+
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+- Angular Material: Uses Material components like toolbar, cards
 
-```bash
-ng test
-```
+- Type Safety: Strong typing with interfaces for card data
 
-## Running end-to-end tests
+- Responsive Design: Cards are wrapped and centered
 
-For end-to-end (e2e) testing, run:
+- Modern Structure: Clean component separation
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+You can now extend this by adding routing, services, or more Material components as needed.

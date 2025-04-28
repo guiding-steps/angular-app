@@ -13,20 +13,7 @@ interface CardData {
   selector: 'app-body',
   standalone: true,  
   imports: [MatCardModule, NgFor, NgIf],
-  template: `
-    <div class="card-container">
-      <mat-card class="example-card" *ngFor="let card of cards">
-        <mat-card-header>
-          <mat-card-title>{{ card.title }}</mat-card-title>
-          <mat-card-subtitle>{{ card.subtitle }}</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image *ngIf="card.imageUrl" [src]="card.imageUrl" alt="Card image">
-        <mat-card-content>
-          <p>{{ card.content }}</p>
-        </mat-card-content>
-      </mat-card>
-    </div>  
-  `,
+  templateUrl: './body.component.html',
   styles: [`
       .card-container {
           display: flex;
